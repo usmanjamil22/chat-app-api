@@ -1,5 +1,3 @@
 module.exports = {
-  HOST: "localhost",
-  PORT: 27017,
-  DB: "chat-app",
+  URI:"mongodb+srv://usmanjamil:usmanbutt90@chat-app-api.oaz1a.mongodb.net/chat-app-api?retryWrites=true&w=majority"
 };

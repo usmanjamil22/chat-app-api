@@ -19,12 +19,12 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(dbConfig.URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log("Successfully connect to MongoDB.");
+  .then((conn) => {
+    console.log(`Successfully connect to MongoDB.${conn.connection.host}`);
   })
   .catch((err) => {
     console.error("Connection error", err);
@@ -135,5 +135,5 @@ io.use(function(socket, next){
   });
 
 server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`, dbConfig.HOST);
+  console.log(`Server is running on port ${PORT}.`);
 });
