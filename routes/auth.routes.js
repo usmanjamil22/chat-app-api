@@ -1,9 +1,10 @@
-const {checkDuplicateUsernameOrEmail} = require("../middlewares/verifySignup");
+const { verifySignUp } = require("../middlewares");
 const controller = require("../controllers/auth.controller");
 const router = require("express").Router();
 
-router.route("/auth/signup").post(
-  checkDuplicateUsernameOrEmail,
+router.post(
+  "/auth/signup",
+  [verifySignUp.checkDuplicateUsernameOrEmail],
   controller.signup
 );
 
