@@ -4,7 +4,7 @@ const router = require("express").Router();
 
 router.post(
   "/auth/signup",
-  [verifySignUp.checkDuplicateUsernameOrEmail],
+  verifySignUp.checkDuplicateUsernameOrEmail,
   controller.signup
 );
 
