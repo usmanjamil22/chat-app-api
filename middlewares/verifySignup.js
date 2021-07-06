@@ -39,4 +39,4 @@ const verifySignUp = {
   checkDuplicateUsernameOrEmail,
 };
 
-module.exports = verifySignUp;
+module.exports = checkDuplicateUsernameOrEmail;
